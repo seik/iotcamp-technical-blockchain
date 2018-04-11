@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Social</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  <script src="./app.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="d-flex justify-content-center">
+      <div class="col-lg-8 col-md-8">
+        <div class="row d-flex justify-content-center mb-2">
+          <span class="text-primary">
+            <span id="user-karma">0</span>
+            <span> Karma</span>
+          </span>
+        </div>
+        <textarea class="form-control" placeholder="Enter here for posting..." rows="3" id="post-content"></textarea>
+        <br>
+        <div class="w-100 d-flex justify-content-end p-r-4">
+          <a href="#" class="btn btn-primary btn-sm" onclick="App.publishPost()">Post</a>
+        </div>
+
+        <div class="clearfix"></div>
+        <hr>
+        <ul id="posts">
+        </ul>
+        <div class="row d-flex justify-content-center mt-2 mb-4">
+          <span class="text-danger">
+            <small>Number of posts </small>
+            <small id="number-posts">0</small>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
+
+
+<template id="post">
+  <li class="card mb-2">
+    <div class="card-body">
+      <strong class="text-success" id="owner">Test user</strong>
+      <p id="content">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet.
+      </p>
+      <div class "row d-flex justify-content-end">
+        <div class="pull-right" id="post-id">
+          <i class="fa fa-heart" onclick="App.upvote(this.parentElement.id)" id="hearth"></i>
+        </div>
+      </div>
+    </div>
+  </li>
+</template>
